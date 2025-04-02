@@ -3,11 +3,10 @@ import {
   View,
   Text,
   TextInput,
-  Picker,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { styled } from "nativewind";
+import { Picker } from "@react-native-picker/picker";
 
 const fertilizers = [
   {
@@ -94,7 +93,15 @@ const CalculatorTab = () => {
         </Picker>
 
         <TouchableOpacity
-          className="btn btn-primary w-full"
+          // className="btn btn-primary w-full"
+          style={{
+            backgroundColor: "#3b82f6",
+            padding: 10,
+            borderRadius: 8,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
           onPress={calculateFertilizer}
         >
           <Text className="text-primary-content text-center font-semibold">

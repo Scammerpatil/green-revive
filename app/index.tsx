@@ -12,7 +12,6 @@ const WelcomePage = () => {
       className="flex-1 bg-base-100 justify-between items-center p-6"
       data-theme="forest"
     >
-      {/* Main Content */}
       <View className="flex-1 justify-center items-center">
         <Image
           source={require("../assets/images/bg.png")}
@@ -26,12 +25,22 @@ const WelcomePage = () => {
           Detect diseases in Banana and Coffee leaves using AI-powered analysis.
         </Text>
         <TouchableOpacity
-          className="btn btn-primary w-full mb-4"
+          style={{
+            backgroundColor: "#4CAF50",
+            padding: 10,
+            borderRadius: 5,
+            width: "200",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: 10,
+          }}
           onPress={() => {
             router.push("/user/Home");
           }}
         >
-          <Text className="font-semibold">Let's Get Started</Text>
+          <Text className="font-semibold text-success-content">
+            Let's Get Started
+          </Text>
         </TouchableOpacity>
         <Text className="text-sm text-base-content/50 text-center">
           By signing up, you agree to our{" "}

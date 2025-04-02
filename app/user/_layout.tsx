@@ -27,7 +27,7 @@ const UserLayout = () => {
               color={focused ? "#16A34A" : "#737373"}
               style={{
                 backgroundColor: focused ? "#D1FAE5" : "transparent",
-                padding: 10,
+                // padding: 10,
                 borderRadius: 10,
               }}
             />
@@ -45,7 +45,7 @@ const UserLayout = () => {
         tabBarStyle: {
           backgroundColor: "#15191e",
           height: 80,
-          paddingBottom: 10,
+          // paddingBottom: 10,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 3 },
           shadowOpacity: 0.1,

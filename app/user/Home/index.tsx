@@ -66,15 +66,15 @@ const HomeTab = () => {
   };
 
   return (
-    <ScrollView className="bg-base-100 flex-1 items-center justify-center p-4">
-      <Text className="text-lg font-semibold text-base-content mb-2">
+    <ScrollView className="bg-base-100 flex-1 p-4">
+      <Text className="text-lg text-center font-semibold text-base-content mb-2">
         Select Leaf Type
       </Text>
       <View className="bg-base-200 rounded-lg w-60 mb-4">
         <Picker
           selectedValue={selectedLeaf}
           onValueChange={(itemValue) => setSelectedLeaf(itemValue)}
-          className="select select-primary w-full"
+          className="select select-primary w-full mx-auto"
         >
           <Picker.Item label="Banana Leaf" value="banana" />
           <Picker.Item label="Coffee Leaf" value="coffee" />
@@ -87,12 +87,22 @@ const HomeTab = () => {
             ? { uri: previewImage }
             : require("../../../assets/images/preview.png")
         }
-        className="w-48 h-48 rounded-lg mb-4"
+        className="w-48 h-48 rounded-lg mb-4 mx-auto"
       />
 
-      <View className="flex-row space-x-4">
+      <View
+        className="flex-row space-x-4"
+        style={{ marginTop: 20, flex: 1, gap: 10 }}
+      >
         <TouchableOpacity
-          className="btn btn-primary flex-row items-center"
+          style={{
+            backgroundColor: "#3b82f6",
+            padding: 10,
+            borderRadius: 8,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
           onPress={handleCapture}
         >
           <Feather name="camera" size={20} className="mr-2" />
@@ -100,7 +110,15 @@ const HomeTab = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          className="btn btn-secondary flex-row items-center"
+          // className="btn btn-secondary flex-row items-center"
+          style={{
+            backgroundColor: "#4ade80",
+            padding: 10,
+            borderRadius: 8,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
           onPress={handleGallery}
         >
           <AntDesign name="picture" size={20} className="mr-2" />
@@ -109,7 +127,15 @@ const HomeTab = () => {
       </View>
 
       <TouchableOpacity
-        className="btn btn-primary w-full mt-6"
+        // className="btn btn-primary w-full mt-6"
+        style={{
+          backgroundColor: "#3b82f6",
+          padding: 10,
+          borderRadius: 8,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 20,
+        }}
         onPress={() => {
           handleUpload();
         }}
