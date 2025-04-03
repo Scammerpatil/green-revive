@@ -35,6 +35,32 @@ const fertilizers = [
     baseAmount: 1.2,
     usage: "Provides essential trace elements",
   },
+  // New Fertilizers Added
+  {
+    name: "Boron-based Fertilizer",
+    baseAmount: 1.5,
+    usage: "Improves flower and fruit set",
+  },
+  {
+    name: "Iron Chelate",
+    baseAmount: 1.3,
+    usage: "Prevents iron deficiency (chlorosis)",
+  },
+  {
+    name: "Magnesium Sulfate (Epsom Salts)",
+    baseAmount: 2.0,
+    usage: "Prevents magnesium deficiency, promotes healthy growth",
+  },
+  {
+    name: "Manganese Sulfate",
+    baseAmount: 1.8,
+    usage: "Prevents manganese deficiency",
+  },
+  {
+    name: "Micronutrient Mix",
+    baseAmount: 1.2,
+    usage: "Provides essential trace elements",
+  },
 ];
 
 const CalculatorTab = () => {
@@ -81,7 +107,8 @@ const CalculatorTab = () => {
             const fertilizer = fertilizers.find((f) => f.name === itemValue);
             setSelectedFertilizer(fertilizer);
           }}
-          className="select select-primary w-full mb-4"
+          className="select select-primary w-full mb-4 select-bordered"
+          dropdownIconColor="#3b82f6"
         >
           {fertilizers.map((fertilizer, index) => (
             <Picker.Item
@@ -93,7 +120,6 @@ const CalculatorTab = () => {
         </Picker>
 
         <TouchableOpacity
-          // className="btn btn-primary w-full"
           style={{
             backgroundColor: "#3b82f6",
             padding: 10,

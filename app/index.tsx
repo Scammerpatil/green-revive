@@ -22,16 +22,17 @@ const WelcomePage = () => {
           Welcome to GreenRevive
         </Text>
         <Text className="text-base text-base-content/50 text-center mb-6">
-          Detect diseases in Banana and Coffee leaves using AI-powered analysis.
+          Detect nutrients loss in Banana and Coffee leaves using AI-powered
+          analysis.
         </Text>
         <TouchableOpacity
           style={{
             backgroundColor: "#4CAF50",
             padding: 10,
             borderRadius: 5,
-            width: "200",
             alignItems: "center",
             justifyContent: "center",
+            width: "80%",
             marginBottom: 10,
           }}
           onPress={() => {
@@ -42,16 +43,16 @@ const WelcomePage = () => {
             Let's Get Started
           </Text>
         </TouchableOpacity>
-        <Text className="text-sm text-base-content/50 text-center">
-          By signing up, you agree to our{" "}
-          <Text className="font-bold link">Terms of Service</Text> and
-          <Text className="font-bold link"> Privacy Policy</Text>
-        </Text>
       </View>
 
       {/* Footer Container */}
       <View className="w-full py-4 bg-base-200 items-center">
         <Text className="text-sm text-base-content/50 text-center">
+          By signing up, you agree to our{" "}
+          <Text className="font-bold link">Terms of Service</Text> and
+          <Text className="font-bold link"> Privacy Policy</Text>
+        </Text>
+        <Text className="text-sm text-base-content/50 text-center mt-6">
           © 2023 GreenRevive. All rights reserved.
         </Text>
       </View>

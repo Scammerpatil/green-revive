@@ -27,7 +27,6 @@ const UserLayout = () => {
               color={focused ? "#16A34A" : "#737373"}
               style={{
                 backgroundColor: focused ? "#D1FAE5" : "transparent",
-                // padding: 10,
                 borderRadius: 10,
               }}
             />
@@ -36,7 +35,7 @@ const UserLayout = () => {
         tabBarLabel: ({ focused }) => (
           <Text
             className={`text-xs ${
-              focused ? "text-success font-bold" : "text-base-content"
+              focused ? "text-white font-bold" : "text-white"
             }`}
           >
             {route.name}
@@ -45,7 +44,7 @@ const UserLayout = () => {
         tabBarStyle: {
           backgroundColor: "#15191e",
           height: 80,
-          // paddingBottom: 10,
+          paddingBottom: 10,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 3 },
           shadowOpacity: 0.1,
