@@ -61,17 +61,18 @@ def detect_leaf(image_path):
 
 if __name__ == "__main__":
     image_path = "python/uploads/coffee.jpg" 
-    if not detect_leaf(image_path):
-        raise ValueError("No leaf detected in the image.")
-    processed_image = preprocess_image(image_path)
-    
-    predictions = model.predict(processed_image)
-    
-    predicted_class = np.argmax(predictions)
-    predicted_label = classes[predicted_class]
-    
-    confidence = predictions[0][predicted_class] * 100
-    print(json.dumps({
-        "predicted_label": predicted_label,
-        "confidence": confidence,
-    }))
+    if detect_leaf(image_path):
+        processed_image = preprocess_image(image_path)
+        
+        predictions = model.predict(processed_image)
+        
+        predicted_class = np.argmax(predictions)
+        predicted_label = classes[predicted_class]
+        
+        confidence = predictions[0][predicted_class] * 100
+        print(json.dumps({
+            "predicted_label": predicted_label,
+            "confidence": confidence,
+        }))
+    else:
+        print("No leaf detected in the image.")

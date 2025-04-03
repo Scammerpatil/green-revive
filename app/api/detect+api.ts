@@ -17,7 +17,9 @@ export async function POST(req: Request) {
       `py -3.10 python/banana.py ${imagePath}`
     );
     console.log(stdout.trim().split("\n").pop());
-    if (stdout.trim().split("\n").pop()?.includes("No Leaf Detected")) {
+    if (
+      stdout.trim().split("\n").pop()?.includes("No Leaf Detected in the Image")
+    ) {
       return Response.json({ message: "No Leaf Detected" }, { status: 401 });
     }
     const res = JSON.parse(stdout.trim().split("\n").pop()!);
@@ -94,6 +96,11 @@ export async function POST(req: Request) {
     const { stdout, stderr } = await execAsync(
       `py -3.8 python/coffee.py ${imagePath}`
     );
+    if (
+      stdout.trim().split("\n").pop()?.includes("No Leaf Detected in the Image")
+    ) {
+      return Response.json({ message: "No Leaf Detected" }, { status: 401 });
+    }
     const res = JSON.parse(stdout.trim().split("\n").pop()!);
     const prediciton = res.predicted_label as
       | "iron"
